@@ -1,0 +1,38 @@
+1.  a) char myChar1 = 'B'
+       fprintf(fp, "%c", myChar1)
+
+       i) The ASCII value of 'B' is 66. The binary of 66 gets stored in memory: 0100 0010
+
+       ii) 0100 0010. What gets stored in the memory is the same as what gets stored in the file.
+
+
+    b) char myChar1 = '5';
+       fprintf(fp, "%c", myChar1);
+
+       i) The ASCII value of '5' is 53. The binary of 53 gets stored in memory: 0011 0101
+
+       ii) 0011 0101. What gets stored in the memory is the same as what gets stored in the file.
+
+    
+    c) int myInt = 5;
+       fprintf(fp, "%d", myInt);
+
+       i) 00000000 00000000 00000000 00000101
+
+       ii) The ASCII value of 5 is 53. The binary equivalent is: 0011 0101
+
+
+    d) char myChar1 = '5';
+       fwrite(&myChar1, sizeof(char), 1, fp);
+
+       i) 00110101
+
+       ii) 00110101
+
+
+    e) int myInt = 5;
+       fwrite(&myInt, sizeof(int), 1, fp);
+
+       i) 00000000 00000000 00000000 00000101
+
+       ii) 00000000 00000000 00000000 00000101       

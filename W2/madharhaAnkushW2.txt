@@ -1,0 +1,60 @@
+Question 1:
+    a) worksheet2_main.o, worksheetW2
+    b) gcc -Wall -std=c99 read1Grads.o read2Grads.o worksheet2_main.o -o worksheetW2
+       gcc -Wall -std=c99 -c read1Grads.c99
+    c) removeJunk: 
+            rm *.o worksheetW2
+
+Question 2:
+a)
+int read1Grads(FILE* file, gradStudent gsArray[MAX_GRAD_STUDENTS]) {
+    int i = 0;
+    char fname[MAX_LEN_NAME];
+    char lname[MAX_LEN_NAME];
+
+    char sFname[MAX_LEN_NAME];
+    char sLname[MAX_LEN_NAME];
+
+    while(!feof(file)) {
+        fscanf(file, "%s%s%s%s %d %f", fname, lname, sFname, sLname, &gsArray[i].numCoursesDone, &gsArray[i].currentPercentage);
+
+        strcpy(gsArray[i].name, fname);
+        strcat(gsArray[i].name, " ");
+        strcat(gsArray[i].name, lname);
+
+        strcpy(gsArray[i].supervisor, sFname);
+        strcat(gsArray[i].supervisor, " ");
+        strcat(gsArray[i].supervisor, sLname);
+
+        i++;
+    }
+
+    return i;
+}
+
+
+b)
+int read2Grads(FILE* file, gradStudent gsArray[MAX_GRAD_STUDENTS]) {
+    int i = 0;
+    char fname[MAX_LEN_NAME];
+    char lname[MAX_LEN_NAME];
+
+    char sFname[MAX_LEN_NAME];
+    char sLname[MAX_LEN_NAME];
+
+    while(!feof(file)) {
+        fscanf(file, "%s%s%s%s %d %f", fname, lname, sFname, sLname, &gsArray[i].numCoursesDone, &gsArray[i].currentPercentage);
+
+        strcpy(gsArray[i].name, fname);
+        strcat(gsArray[i].name, " ");
+        strcat(gsArray[i].name, lname);
+
+        strcpy(gsArray[i].supervisor, sFname);
+        strcat(gsArray[i].supervisor, " ");
+        strcat(gsArray[i].supervisor, sLname);
+
+        i++;
+    }
+
+    return i;
+}
